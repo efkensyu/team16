@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<link rel="stylesheet" th:href="@{/team16/Team16Game.css}">
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<h2>黒の番です</h2>
+	<table>
+		<tr th:each="y,i:${board}">
+			<td th:each="x,j:${y}">
+				<form method="post" th:action="@{/White}">
+	                <input type="hidden"
+	                       name="x"
+	                       th:value="${j.index}" >
+
+	                <input type="hidden"
+	                       name="y"
+	                       th:value="${i.index}" >
+
+	                <button type="submit">
+						<div th:if="${x == 1}" class="black"></div>
+						<div th:if="${x == 2}" class="white"></div>			
+	                </button>
+
+	            </form>
+
+	        </td>
+
+	    </tr>
+
+	</table>
+
+</body>
+</html>
