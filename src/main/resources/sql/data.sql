@@ -1,5 +1,5 @@
-INSERT INTO bumon_tbl VALUES('B01', '開発部');
-INSERT INTO bumon_tbl VALUES('B02', '技術部');
-INSERT INTO bumon_tbl VALUES('B03', '管理部');
-INSERT INTO bumon_tbl VALUES('B04', '総務部');
-INSERT INTO bumon_tbl VALUES('B05', '営業部');
+INSERT INTO team16_users_tbl VALUES('maromaro', 1 , 100.000, 1);
+INSERT INTO team16_users_tbl VALUES('maro', 4 , 75.000,  3);
+INSERT INTO team16_users_tbl VALUES('Blod', 5 ,  100.000 , 5);
+INSERT INTO team16_users_tbl VALUES('田中', 1 , 100.000 , 1);
+INSERT INTO team16_users_tbl VALUES('大野', 8 , 37.500 , 3);
