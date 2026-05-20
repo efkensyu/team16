@@ -1,6 +1,6 @@
-DROP TABLE IF EXISTS BUMON_TBL;
-CREATE TABLE BUMON_TBL(
-	BUMON_CD CHAR(3),
-	BUMON_NM VARCHAR2(20),
-	PRIMARY KEY(BUMON_CD)
-	);
+CREATE TABLE team16_users_tbl (
+    username VARCHAR(10) PRIMARY KEY,
+    battle_count INT,
+    win_percent DECIMAL(6,3),
+    win_count INT
+);
