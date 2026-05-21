@@ -21,8 +21,46 @@ public class Team16GameMethod {
 	}
 	
 	//ボードセット
+		//黒
 		public void setBoardBlack(Team16GameForm form,int x,int y) {
-			form.board[y][x]=1;	
+			form.board[y][x]=1;
+			
+			//左上
+			int xx = x;
+			int yy = y;
+			boolean b = false;
+			boolean bb = false;
+			while (xx - 1 >= 0 && yy - 1 >= 0) {
+		        if (form.board[yy-1][xx-1] == 2) {
+		            bb = true;
+		        }
+		        else if (form.board[yy-1][xx-1] == 1) {
+		            if (bb) {
+		                b = true;
+		            }
+		            break;
+		        }
+		        else {
+		            break;
+		        }
+		        xx--;
+		        yy--;
+			}
+			xx = x;
+			yy = y;
+			if(b) {
+				while (xx - 1 >= 0 && yy - 1 >= 0) {
+					if (form.board[yy-1][xx-1] == 2) {
+						form.board[yy-1][xx-1] = 1;
+					}else {
+						break;
+					}
+					 xx--;
+				     yy--;
+		        }
+			}
+			
+			
 			for (int i = 0; i < 8; i++) {
 	            for (int j = 0; j < 8; j++) {
 	                if(form.board[i][j] == 3) {
@@ -31,6 +69,7 @@ public class Team16GameMethod {
 	            }
 	        }
 		}
+		//白
 		public void setBoardWhite(Team16GameForm form,int x,int y) {
 			form.board[y][x]=2;	
 			for (int i = 0; i < 8; i++) {
