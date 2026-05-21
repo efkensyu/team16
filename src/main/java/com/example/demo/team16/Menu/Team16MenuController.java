@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 		
 		@PostMapping("/login")
 		public String send() {
-			return "kensyu1/login";
+			return "team16/Login/Team16LoginIn";
 		}
 	}
 
