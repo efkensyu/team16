@@ -1,5 +1,7 @@
 package com.example.demo.team16;
 
+import java.math.BigDecimal;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
@@ -14,7 +16,7 @@ public class Team16Entity {
 	@Id
 	private String username;
 	private Integer battle_count;
-	private Double win_percent;
+	private BigDecimal win_percent;
 	private Integer win_count;
 	
 

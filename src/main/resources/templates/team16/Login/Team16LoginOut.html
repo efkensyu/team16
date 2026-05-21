@@ -5,8 +5,12 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<th:block th:each = "data : ${userDataList}">
+	<th:block th:each = "data : ${blackPlayer}">
 		<p th:text="${data.username}"></p>
+	</th:block>
+	<th:block th:each = "data : ${whitePlayer}">
+		<p th:text="${data.username}"></p>
+ 
 	</th:block>
 		
 </body>

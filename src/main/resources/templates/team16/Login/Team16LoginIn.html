@@ -6,14 +6,35 @@
 <link rel="stylesheet" type="text/css" href="Team16/Team16Login.css">
 </head>
 <body>
-	<form method="post" action="/login1">
+	
+	<form method="post" th:action="@{/login1}" th:object="${team16GameForm}">
 		
 		<p>ユーザーネームを入力してね！</p>
-		<input type ="text" name="username">
-		<input type ="submit" name="login" value ="ログイン">
+		<p class="user">黒プレイヤー
+		<input class="username1" type ="text" th:field="*{black}">
+		</p>
+		
+		<p class="error1" th:errors="*{black}"></p>
+		<p class="error3" th:text="${message1}"></p>
+		
+		
+		<p class="user">白プレイヤー
+		<input class="username2" type ="text" th:field="*{white}">
+		</pclass="blackuser">
+		
+		<p class="error2" th:errors="*{white}"></p>
+		
+		<p class="error3" th:text="${message}"></p>
+		
+		
+		<p class="error3" th:text="${message2}"></p>
+		<input class="login" type ="submit" name="login" value ="ログイン">
+		
 		<br>
-		<input type ="submit" name="start" value ="スタート画面へ">
-		<input type ="submit" name="menu" value ="メニュー画面へ">
+		<input class="add" type ="submit" name="add" value ="アカウント新規作成">
+		<input class="start" type ="submit" name="start" value ="スタート画面へ">
+		<input class="menu" type ="submit" name="menu" value ="メニュー画面へ">
+		
 				
 		
 	</form>
