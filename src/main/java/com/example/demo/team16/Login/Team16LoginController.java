@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import com.example.demo.team16.Team16Entity;
 import com.example.demo.team16.Game.Team16GameForm;
 import com.example.demo.team16.Service.Team16LoginsService;
+import com.example.demo.team16.Service.Team16StartService;
 
 import lombok.RequiredArgsConstructor;
 
@@ -21,7 +22,7 @@ import lombok.RequiredArgsConstructor;
 
 public class Team16LoginController {
 	private final Team16LoginsService team16LoginsService;
-	
+	private final Team16StartService team16StartService;
 		@GetMapping("/login1")	
 		public String index(@ModelAttribute Team16GameForm team16GameForm ) {	
 			return "team16/Login/Team16LoginIn";
@@ -72,10 +73,13 @@ public class Team16LoginController {
 			        model.addAttribute("message", "****同じユーザーは選べません****");
 			        return "team16/Login/Team16LoginIn";
 			    }
-			
+			 List<Team16Entity>userDataBlack = team16StartService. findByUsernameEquals(team16GameForm.black);
+				model.addAttribute("userDataBlack",userDataBlack);
+				List<Team16Entity>userDataWhite = team16StartService. findByUsernameEquals(team16GameForm.white);
+				model.addAttribute("userDataWhite",userDataWhite);
 			model.addAttribute("blackPlayer", blackPlayer);
 			model.addAttribute("whitePlayer", whitePlayer);
-			return "team16/Login/Team16LoginOut";
+			return "team16/Start/Team16Start";
 		}
 	
  
