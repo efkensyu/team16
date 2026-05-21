@@ -11,7 +11,8 @@
 	</h1>
 	<form method="post" action="/game">
 		<br><br><br>
-		<p><input type="submit"name="gamestart" value="ゲームスタート"/></p>
+		<p><input type="submit"value="ゲームスタート" formaction="/Game"
+		              formmethod="get"/></p>
 	
 	<p><input type="submit"name="menu" value="メニューに戻る"/></p>
 	
@@ -19,5 +20,11 @@
 	<br><br><br>
 	<p class="kekka"  th:text="'勝率：'+'　'+${user} +'　' + ${win} + '/' + ${game} + '　'+ ${wari} + '%'"></p>
 	<p class="kekka"  th:text="'勝率：'+'　'+${user} +'　' + ${win} + '/' + ${game} + '　'+ ${wari} + '%'"></p>
+	<table border="1">
+		<tr th:each="data : ${userDataList}">
+			<td th:text="${data.username}"></td>
+			<td th:text="${data.username}"></td>
+		</tr>
+	</table>
 </body>
 </html>
