@@ -22,21 +22,28 @@ public class Team16GameController {
     public String Start(@ModelAttribute Team16GameForm team16GameForm ) {
     	
     	method.createBoard(team16GameForm);
-        method.checkBoardBlack(team16GameForm);
+        method.checkBoard(team16GameForm,1,2);
         return "team16/Game/Team16GameBlack";
     }
     
     @PostMapping("/White")
-    public String White(@ModelAttribute Team16GameForm team16GameForm ,@RequestParam int x,int y) {
-    	method.setBoardBlack(team16GameForm,x,y);
-    	method.checkBoardWhite(team16GameForm);
+    public String White(@ModelAttribute Team16GameForm team16GameForm ,@RequestParam int x,int y,int n) {
+    	if(n !=3) {
+    		return "team16/Game/Team16GameBlack";
+    	}
+    	method.setBoard(team16GameForm,x,y,1,2);
+    	method.checkBoard(team16GameForm,2,1);
     	return "team16/Game/Team16GameWhite";
     }
     
     @PostMapping("/Black")
-    public String Black(@ModelAttribute Team16GameForm team16GameForm,@RequestParam int x,int y) {
-    	method.setBoardWhite(team16GameForm,x,y);
-    	method.checkBoardBlack(team16GameForm);
+    public String Black(@ModelAttribute Team16GameForm team16GameForm,@RequestParam int x,int y,int n) {
+    	
+    	if(n !=3) {
+    		return "team16/Game/Team16GameWhite";
+    	}
+    	method.setBoard(team16GameForm,x,y,2,1);
+    	method.checkBoard(team16GameForm,1,2);
     	return "team16/Game/Team16GameBlack";
     }
     

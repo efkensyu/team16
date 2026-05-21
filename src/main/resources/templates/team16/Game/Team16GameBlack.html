@@ -12,19 +12,14 @@
 		<tr th:each="y,i:*{board}">
 			<td th:each="x,j:${y}">
 				<form method="post" th:action="@{/White}">
-	                <input type="hidden"
-	                       name="x"
-	                       th:value="${j.index}" >
-
-	                <input type="hidden"
-	                       name="y"
-	                       th:value="${i.index}" >
-
+	                <input type="hidden" name="x" th:value="${j.index}" >
+	                <input type="hidden" name="y" th:value="${i.index}" >
+					<input type="hidden" name="n" th:value="${x}" >
+					
 	                <button type="submit">
 						<div th:if="${x == 1}" class="black"></div>
 						<div th:if="${x == 2}" class="white"></div>	
-						<div th:if="${x == 3}" class="greyB"></div>	
-						<div th:if="${x == 4}" class="greyW"></div>										
+						<div th:if="${x == 3}" class="greyB"></div>											
 	                </button>
 	            </form>
 	        </td>
