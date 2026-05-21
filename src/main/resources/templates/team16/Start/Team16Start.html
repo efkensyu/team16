@@ -9,22 +9,41 @@
 	<h1>
 		見附オセロ
 	</h1>
-	<form method="post" action="/game">
+	<form method="post" action="/game" th:object="${team16GameForm}">
 		<br><br><br>
 		<p><input type="submit"value="ゲームスタート" formaction="/Game"
 		              formmethod="get"/></p>
 	
 	<p><input type="submit"name="menu" value="メニューに戻る"/></p>
 	
-	</form>		
+		
 	<br><br><br>
-	<p class="kekka"  th:text="'勝率：'+'　'+${user} +'　' + ${win} + '/' + ${game} + '　'+ ${wari} + '%'"></p>
-	<p class="kekka"  th:text="'勝率：'+'　'+${user} +'　' + ${win} + '/' + ${game} + '　'+ ${wari} + '%'"></p>
-	<table border="1">
-		<tr th:each="data : ${userDataList}">
-			<td th:text="${data.username}"></td>
-			<td th:text="${data.username}"></td>
-		</tr>
-	</table>
+	<span class="kekka"  th:text="'ログイン名：'+*{black} "></span>	
+	
+	<span class="kekka" th:each="data : ${userDataBlack}">
+		<span th:text="'勝った数：'+${data.win_count}"></span>
+		<span class="kekka" th:text="'/'+${data.battle_count}"></span>
+		<span class="kekka" th:text="'勝率：'+${data.win_percent}"></span>
+	</span>
+	<span class="kekka" th:each="data : ${userDataBlack}">
+	</span>
+	<span class="kekka" th:each="data : ${userDataBlack}">
+	</span>
+	
+	<br>
+	
+	<span class="kekka"  th:text="'ログイン名：'+*{white} "></span>
+	
+	<span class="kekka" th:each="data : ${userDataWhite}">
+			<span th:text="'勝った数：'+${data.win_count}"></span>
+			<span class="kekka" th:text="'/'+${data.battle_count}"></span>
+			<span class="kekka" th:text="'勝率：'+${data.win_percent}"></span>
+		</span>
+		<span class="kekka" th:each="data : ${userDataWhite}">
+		</span>
+		<span class="kekka" th:each="data : ${userDataWhite}">
+		</span>
+	
+	</form>	
 </body>
 </html>
