@@ -14,8 +14,8 @@ import lombok.RequiredArgsConstructor;
 public class Team16StartService {
 	private final Team16GameStartRepository repository;
 	
-	public List<Team16Entity> findAll(){
-		return repository.findAll();
+	public List<Team16Entity>  findByUsernameEquals(String username){
+		return repository. findByUsernameEquals(username);
 	}
 
 }
