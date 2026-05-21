@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-<link rel="stylesheet" th:href="@{/team16/Team16Game.css}">
+<link rel="stylesheet" th:href="@{team16/Team16Game.css}">
 <meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
@@ -16,7 +16,7 @@
 	                <input type="hidden" name="y" th:value="${i.index}" >
 					<input type="hidden" name="n" th:value="${x}" >
 					
-	                <button type="submit">
+	                <button type="submit" class="board">
 						<div th:if="${x == 1}" class="black"></div>
 						<div th:if="${x == 2}" class="white"></div>	
 						<div th:if="${x == 3}" class="greyB"></div>											
@@ -26,5 +26,8 @@
 	    </tr>
 		</th:block>
 	</table>
+	<form method="get" th:action="@{/Game}">
+			<button class="restart" type="submit">リスタート</button>
+	</form>
 </body>
 </html>

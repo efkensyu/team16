@@ -20,6 +20,17 @@ public class Team16GameMethod {
 			form.board=board;
 	}
 	
+	//ボードリセット
+	public void resetBoard(Team16GameForm form) {
+		for (int i = 0; i < 8; i++) {
+			for (int j = 0; j < 8; j++) {
+				if(form.board[i][j] == 3) {
+					form.board[i][j]=0;
+	             }
+	         }
+	     }
+	}
+	
 	//ボードセット
 	public void setBoard(Team16GameForm form,int x,int y,int n,int m) {
 		form.board[y][x]=n;
@@ -485,7 +496,7 @@ public class Team16GameMethod {
 			}
 		}
 		for(int i = 0; i < 8 ; i++) {
-			for(int j = 0; i < 8; i++) {
+			for(int j = 0; j < 8; j++) {
 				if(form.board[i][j]==3) {
 					pass1=true;
 				}
