@@ -12,7 +12,9 @@ import org.springframework.web.bind.annotation.SessionAttributes;
 @Controller
 @SessionAttributes("team16GameForm")
 public class Team16GameController {
+	
 	Team16GameMethod method = new Team16GameMethod();
+	
 	@ModelAttribute("team16GameForm")
 		public Team16GameForm setTeam16GameForm(){
 			return new Team16GameForm();
@@ -32,8 +34,18 @@ public class Team16GameController {
     		return "team16/Game/Team16GameBlack";
     	}
     	method.setBoard(team16GameForm,x,y,1,2);
-    	method.checkBoard(team16GameForm,2,1);
-    	return "team16/Game/Team16GameWhite";
+    	boolean pass2=method.checkBoard(team16GameForm,2,1);
+    	if(pass2) {
+    		return "team16/Game/Team16GameWhite";
+    	}
+    	else{
+    		method.resetBoard(team16GameForm);
+    		boolean pass3=method.checkBoard(team16GameForm,1,2);
+    		if(pass3) {
+    			return "team16/Game/Team16GameBlack";
+    		}
+    	}
+    	return "team16/Game/Team16GameResult";
     }
     
     @PostMapping("/Black")
@@ -43,8 +55,18 @@ public class Team16GameController {
     		return "team16/Game/Team16GameWhite";
     	}
     	method.setBoard(team16GameForm,x,y,2,1);
-    	method.checkBoard(team16GameForm,1,2);
-    	return "team16/Game/Team16GameBlack";
+    	boolean pass2=method.checkBoard(team16GameForm,1,2);
+    	if(pass2) {
+    		return "team16/Game/Team16GameBlack";
+    	}
+    	else{
+    		method.resetBoard(team16GameForm);
+    		boolean pass3=method.checkBoard(team16GameForm,2,1);
+    		if(pass3) {
+    			return "team16/Game/Team16GameWhite";
+    		}
+    	}
+    	return "team16/Game/Team16GameResult";
     }
     
 }
