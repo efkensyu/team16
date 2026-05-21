@@ -4,6 +4,59 @@ body{
 	background-color: black;
 }
 
-p{
+.user{
+	text-align: center;
+	font-size: 24px;
+	font-weight: bold;
 	color: azure;
+}
+.username1,
+.username2{
+	width: 90%;
+	padding: 12px;
+	border: 2px solid #ccc;
+	border-radius: 10px;
+	font-size: 16px;
+	margin-bottom: 20px;
+	transition: 0.3s;
+}
+
+.login,
+.add,
+.start,
+.menu{
+	width: 95%;
+	padding: 12px;
+	margin-top: 10px;
+	border: none;
+	border-radius: 10px;
+	font-size: 16px;
+	font-weight: bold;
+	cursor: pointer;
+	transition: 0.3s;
+}
+.login{
+	background-color:dodgerblue;
+	color: white;
+}
+
+.add{
+	background-color:rgb(0, 255, 64);
+		color: white;
+}
+
+.start{
+	background-color:crimson;
+	color:white;
+}
+
+
+.error1,
+.error2,
+.error3{
+	text-align: center;
+		font-size: 24px;
+		font-weight: bold;
+		color:red;
+		
 }
