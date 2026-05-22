@@ -1,13 +1,53 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-<link rel="stylesheet" th:href="@{/team16/Team16Game.css}">
+<link rel="stylesheet" th:href="@{team16/Team16Game.css}">
 <meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
 <body>
+	<h2>
+		<span th:if="${team16GameForm.blackCount>team16GameForm.whiteCount}">
+			黒の勝利
+		</span>
+		<span th:if="${team16GameForm.blackCount<team16GameForm.whiteCount}">
+			白の勝利
+		</span>
+		<span th:if="${team16GameForm.blackCount==team16GameForm.whiteCount}">
+			引き分け
+		</span>
+	</h2>
+	<table>
+			<th:block th:object="${team16GameForm}">
+			<tr th:each="y,i:*{board}">
+				<td th:each="x,j:${y}">
+					<form method="post" th:action="@{/Black}">
+		                <input type="hidden" name="x" th:value="${j.index}" >
+		                <input type="hidden" name="y" th:value="${i.index}" >
+						<input type="hidden" name="n" th:value="${x}" >
+						
+		                <button type="submit" class="board" disabled>
+							<div th:if="${x == 1}" class="black"></div>
+							<div th:if="${x == 2}" class="white"></div>	
+							<div th:if="${x == 3}" class="greyW"></div>						
+		                </button>
+		            </form>
+		        </td>
+		    </tr>
+			</th:block>
+		</table>
+		
+		<h2>
+			<span th:text="'黒: ' + ${team16GameForm.blackCount}"></span>
+			<span class=space th:text="'    白: ' + ${team16GameForm.whiteCount}"></span>
+		</h2>
+		<form method="get" th:action="@{/Game}">
+					<button class="restart" type="submit">リスタート</button>
+		</form>
+		<form method="get" th:action="@{/menu}">
+					<button class="restart" type="submit">メニュー画面へ</button>
+		</form>
 	
-	<h2>黒の番です</h2>
 	
 </body>
 </html>

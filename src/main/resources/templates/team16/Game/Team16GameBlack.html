@@ -26,8 +26,17 @@
 	    </tr>
 		</th:block>
 	</table>
+	
+	<h2>
+		<span th:text="'黒: ' + ${team16GameForm.black}"></span>
+		<span class=space th:text="'    白: ' + ${team16GameForm.white}"></span>
+	</h2>
+		
 	<form method="get" th:action="@{/Game}">
 			<button class="restart" type="submit">リスタート</button>
+	</form>
+	<form method="get" th:action="@{/menu}">
+		<button class="restart" type="submit">メニュー画面へ</button>
 	</form>
 </body>
 </html>

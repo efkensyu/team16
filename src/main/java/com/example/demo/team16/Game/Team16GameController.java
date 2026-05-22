@@ -45,6 +45,7 @@ public class Team16GameController {
     			return "team16/Game/Team16GameBlack";
     		}
     	}
+    	method.resultBoard(team16GameForm);
     	return "team16/Game/Team16GameResult";
     }
     
@@ -66,6 +67,7 @@ public class Team16GameController {
     			return "team16/Game/Team16GameWhite";
     		}
     	}
+    	method.resultBoard(team16GameForm);
     	return "team16/Game/Team16GameResult";
     }
     
