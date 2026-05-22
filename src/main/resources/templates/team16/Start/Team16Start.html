@@ -9,8 +9,12 @@
 	<h1>
 		見附オセロ
 	</h1>
+	
 	<form method="post" th:action="@{/game}" th:object="${team16GameForm}">
 		<br><br><br>
+		<input type="hidden" th:field="*{black}">
+		<input type="hidden" th:field="*{white}">
+
 		<p><input type="submit"value="ゲームスタート" formaction="/Game"
 		              formmethod="get"/></p>
 	

@@ -9,6 +9,7 @@ import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.SessionAttributes;
 
 import com.example.demo.team16.Team16Entity;
 import com.example.demo.team16.Game.Team16GameForm;
@@ -19,10 +20,17 @@ import lombok.RequiredArgsConstructor;
 
 @RequiredArgsConstructor
 @Controller
-
+@SessionAttributes("team16GameForm")
 public class Team16LoginController {
 	private final Team16LoginsService team16LoginsService;
 	private final Team16StartService team16StartService;
+	
+		@ModelAttribute("team16GameForm")
+		public Team16GameForm setupTeam16GameForm() {
+			return new Team16GameForm();
+		}
+	
+	
 		@GetMapping("/login1")	
 		public String index(@ModelAttribute Team16GameForm team16GameForm ) {	
 			return "team16/Login/Team16LoginIn";

@@ -15,10 +15,6 @@ public class Team16GameController {
 	
 	Team16GameMethod method = new Team16GameMethod();
 	
-	@ModelAttribute("team16GameForm")
-		public Team16GameForm setTeam16GameForm(){
-			return new Team16GameForm();
-		}
 	
     @GetMapping("/Game")
     public String Start(@ModelAttribute Team16GameForm team16GameForm ) {
