@@ -15,7 +15,7 @@ public class Team16StartService {
 	private final Team16GameStartRepository repository;
 	
 	public List<Team16Entity>  findByUsernameEquals(String username){
-		return repository. findByUsernameEquals(username);
+		return repository.findByUsernameEquals(username);
 	}
 
 }
