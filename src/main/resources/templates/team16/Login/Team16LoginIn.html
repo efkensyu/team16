@@ -1,9 +1,10 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <link rel="stylesheet" type="text/css" href="Team16/Team16Login.css">
+
 </head>
 <body>
 	
@@ -20,7 +21,7 @@
 		
 		<p class="user">白プレイヤー
 		<input class="username2" type ="text" th:field="*{white}">
-		</pclass="blackuser">
+		</p>
 		
 		<p class="error2" th:errors="*{white}"></p>
 		
@@ -32,7 +33,7 @@
 		
 		<br>
 		<input class="add" type ="submit" name="add" value ="アカウント新規作成">
-		<input class="start" type ="submit" name="start" value ="スタート画面へ">
+		
 		<input class="menu" type ="submit" name="menu" value ="メニュー画面へ">
 		
 				

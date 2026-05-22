@@ -73,6 +73,7 @@ public class Team16LoginController {
 			        model.addAttribute("message", "****同じユーザーは選べません****");
 			        return "team16/Login/Team16LoginIn";
 			    }
+			 
 			 List<Team16Entity>userDataBlack = team16StartService. findByUsernameEquals(team16GameForm.black);
 				model.addAttribute("userDataBlack",userDataBlack);
 				List<Team16Entity>userDataWhite = team16StartService. findByUsernameEquals(team16GameForm.white);
@@ -82,6 +83,11 @@ public class Team16LoginController {
 			return "team16/Start/Team16Start";
 		}
 	
+		
+		@PostMapping(value = "/login1", params = "menu")
+		public String sendMenu(@ModelAttribute Team16GameForm team16GameForm) {
+			return "team16/Menu/Team16Menu";
+		}
  
 	
 
