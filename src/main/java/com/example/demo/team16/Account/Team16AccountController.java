@@ -11,12 +11,14 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import com.example.demo.team16.Team16Entity;
+import com.example.demo.team16.Service.Team16LoginsService;
 
 import lombok.RequiredArgsConstructor;
 
 @RequiredArgsConstructor
 @Controller
 public class Team16AccountController {
+	private final Team16LoginsService team16LoginService;
 
 	@GetMapping("/account1")	
 	public String index(@ModelAttribute Team16AccountForm team16AccountForm ) {	
@@ -24,16 +26,21 @@ public class Team16AccountController {
 	}
 	
 	@PostMapping("/account1")
-	public String createUser(@ModelAttribute @Validated Team16AccountForm team16AccountForm,BindingResult result,Model model ) {
+	public String createUser(@ModelAttribute  @Validated Team16AccountForm team16AccountForm,BindingResult result,Model model ) {
+		
 		
 		if(result.hasErrors()) {
 			return "team16/Account/Team16AccountIn";
 		}
 		
-		Team16Entity entity = new Team16Entity();
-		entity.setUsername(team16AccountForm.getNewuser());
+		Team16Entity team16Entity = new Team16Entity();
+		String newname = team16AccountForm.getUsername();
+		List<Team16Entity> userList = team16LoginService.findByUsernameEquals(newname);
 		
-		List<Team16Entity> userDataList;
+		if(userList.isEmpty()) {
+			team16LoginService.save(team16Entity);
+		}
+		
 		
 		
 		
