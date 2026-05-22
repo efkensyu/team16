@@ -18,7 +18,9 @@ public class Team16LoginsService {
 	}
 	
 	public void save(Team16Entity entity) {
-		repository.save(entity);
+		 repository.save(entity);
 	}
+	
+	
 
 }
