@@ -15,7 +15,7 @@
 		<input type="hidden" th:field="*{black}">
 		<input type="hidden" th:field="*{white}">
 
-		<p><input type="submit"value="ゲームスタート" formaction="/Game"
+		<p><input type="submit"value="ゲームスタート" th:formaction="@{/Game}"
 		              formmethod="get"/></p>
 	
 	<p><input type="submit"name="menu" value="メニューに戻る"/></p>

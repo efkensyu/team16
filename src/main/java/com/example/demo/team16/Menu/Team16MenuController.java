@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 
 	@Controller
 	public class  Team16MenuController {
-		@GetMapping("/menu")
+		@GetMapping("/Team16Menu")
 		public String index(){
 			return "team16/Menu/Team16Menu";
 		}

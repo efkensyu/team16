@@ -10,5 +10,6 @@ import com.example.demo.team16.Team16Entity;
 @Repository
 public interface Team16GameStartRepository extends JpaRepository<Team16Entity,String> {
 	
-	public List<Team16Entity> findByUsernameEquals( String username);
+	public List<Team16Entity> findByUsernameEquals(String username);
+	
 }

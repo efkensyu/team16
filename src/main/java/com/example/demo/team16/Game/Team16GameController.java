@@ -7,15 +7,19 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.SessionAttributes;
 
-//
+import com.example.demo.team16.Service.Team16GameService;
 
+import lombok.RequiredArgsConstructor;
+
+@RequiredArgsConstructor
 @Controller
 @SessionAttributes("team16GameForm")
 public class Team16GameController {
 	
+	final Team16GameService team16GameService;
+	
 	Team16GameMethod method = new Team16GameMethod();
-	
-	
+
     @GetMapping("/Game")
     public String Start(@ModelAttribute Team16GameForm team16GameForm ) {
     	
@@ -42,6 +46,7 @@ public class Team16GameController {
     		}
     	}
     	method.resultBoard(team16GameForm);
+    	
     	return "team16/Game/Team16GameResult";
     }
     
@@ -64,6 +69,7 @@ public class Team16GameController {
     		}
     	}
     	method.resultBoard(team16GameForm);
+    	
     	return "team16/Game/Team16GameResult";
     }
     
