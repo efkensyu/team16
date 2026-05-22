@@ -31,6 +31,22 @@ public class Team16GameMethod {
 	     }
 	}
 	
+	//集計
+	public void resultBoard(Team16GameForm form){
+		form.blackCount=0;
+		form.whiteCount=0;
+		for (int i = 0; i < 8; i++) {
+			for (int j = 0; j < 8; j++) {
+				if(form.board[i][j] == 1) {
+					form.blackCount++;
+	             }
+				if(form.board[i][j] == 2) {
+					form.whiteCount++;
+	             }
+	         }
+	     }
+	}
+	
 	//ボードセット
 	public void setBoard(Team16GameForm form,int x,int y,int n,int m) {
 		form.board[y][x]=n;
