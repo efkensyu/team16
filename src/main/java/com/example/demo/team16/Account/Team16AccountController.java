@@ -36,17 +36,19 @@ public class Team16AccountController {
 		Team16Entity team16Entity = new Team16Entity();
 		String newname = team16AccountForm.getUsername();
 		List<Team16Entity> userList = team16LoginService.findByUsernameEquals(newname);
+		team16Entity.setUsername(newname);
+		team16Entity.setBattle_count(0);
+		team16Entity.setWin_count(0);
+		team16Entity.setWin_percent(0.000);
+		
 		
 		if(userList.isEmpty()) {
 			team16LoginService.save(team16Entity);
-		}
-		
-		
-		
-		
-	
-		
-		return "team16/Account/Team16AccountOut";
+			return "team16/Account/Team16AccountOut";
+		}else {
+			model.addAttribute("message","**既に使用されているアカウント名です**");
+		}	
+		return "team16/Account/Team16AccountIn";
 	}
 
 }

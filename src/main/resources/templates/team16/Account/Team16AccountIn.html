@@ -9,6 +9,7 @@
 	<p>新規アカウント作成</p>
 	<input class="username" type ="text" th:field="*{username}">
 	<p class="error1" th:if="${#fields.hasErrors('username')}" th:errors="*{username}"></p>
+	<p class="error2" th:text="${message}"></p>
 	<input class="addac" type ="submit" name="addac" value ="作成">
 	<br>
 	<input class="back" type ="submit" name="back" value ="ログイン画面に戻る">
