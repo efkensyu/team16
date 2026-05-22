@@ -1,7 +1,8 @@
 package com.example.demo.team16.Game;
 
+import lombok.RequiredArgsConstructor;
 
-
+@RequiredArgsConstructor
 public class Team16GameMethod {
 	
 	//ボード作成メソッド
@@ -32,7 +33,7 @@ public class Team16GameMethod {
 	}
 	
 	//集計
-	public void resultBoard(Team16GameForm form){
+	public int resultBoard(Team16GameForm form){
 		form.blackCount=0;
 		form.whiteCount=0;
 		for (int i = 0; i < 8; i++) {
@@ -45,7 +46,16 @@ public class Team16GameMethod {
 	             }
 	         }
 	     }
+		int t = 0;
+		if(form.blackCount>form.whiteCount) {
+			t = 1;
+		}else if(form.blackCount<form.whiteCount) {
+			t = 2;
+		}
+		return t;
 	}
+	
+	
 	
 	//ボードセット
 	public void setBoard(Team16GameForm form,int x,int y,int n,int m) {
