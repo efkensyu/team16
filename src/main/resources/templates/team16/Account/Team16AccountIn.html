@@ -1,13 +1,14 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
 <body>
-	<form method="post" th:action="@{/account1}" th:object="${team16LoginForm}">
+	<form method="post" th:action="@{/account1}" th:object="${team16AccountForm}">
 	<p>新規アカウント作成</p>
-	<input class="username" type ="text" name="username">
+	<input class="newuser" type ="text" th:field="*{newuser}">
+	<p class="error1" th:if="${#fields.hasError('newuser')" th:errors="*{newuser}"></p>
 	<input class="addac" type ="submit" name="addac" value ="作成">
 	<br>
 	<input class="back" type ="submit" name="back" value ="ログイン画面に戻る">
