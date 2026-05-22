@@ -1,5 +1,7 @@
 package com.example.demo.team16.Account;
 
+import java.util.List;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -23,8 +25,18 @@ public class Team16AccountController {
 	
 	@PostMapping("/account1")
 	public String createUser(@ModelAttribute @Validated Team16AccountForm team16AccountForm,BindingResult result,Model model ) {
+		
+		if(result.hasErrors()) {
+			return "team16/Account/Team16AccountIn";
+		}
+		
 		Team16Entity entity = new Team16Entity();
 		entity.setUsername(team16AccountForm.getNewuser());
+		
+		List<Team16Entity> userDataList;
+		
+		
+		
 	
 		
 		return "team16/Account/Team16AccountOut";
