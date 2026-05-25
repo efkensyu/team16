@@ -3,10 +3,12 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<link rel="stylesheet" type="text/css" th:href="@{team16/Team16Account.css}">
+
 </head>
 <body>
 	<form method="post" th:action="@{/account1}" th:object="${team16AccountForm}">
-	<p>新規アカウント作成</p>
+	<p class="moji">新規アカウント作成</p>
 	<input class="username" type ="text" th:field="*{username}">
 	<p class="error1" th:if="${#fields.hasErrors('username')}" th:errors="*{username}"></p>
 	<p class="error2" th:text="${message}"></p>

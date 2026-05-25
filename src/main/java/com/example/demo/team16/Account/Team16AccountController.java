@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import com.example.demo.team16.Team16Entity;
+import com.example.demo.team16.Game.Team16GameForm;
 import com.example.demo.team16.Service.Team16LoginsService;
 
 import lombok.RequiredArgsConstructor;
@@ -26,8 +27,7 @@ public class Team16AccountController {
 	}
 	
 	@PostMapping("/account1")
-	public String createUser(@ModelAttribute  @Validated Team16AccountForm team16AccountForm,BindingResult result,Model model ) {
-		
+	public String createUser( @Validated @ModelAttribute Team16AccountForm team16AccountForm,BindingResult result,Model model ) {
 		
 		if(result.hasErrors()) {
 			return "team16/Account/Team16AccountIn";
@@ -36,19 +36,24 @@ public class Team16AccountController {
 		Team16Entity team16Entity = new Team16Entity();
 		String newname = team16AccountForm.getUsername();
 		List<Team16Entity> userList = team16LoginService.findByUsernameEquals(newname);
-		team16Entity.setUsername(newname);
-		team16Entity.setBattle_count(0);
-		team16Entity.setWin_count(0);
-		team16Entity.setWin_percent(0.000);
-		
 		
 		if(userList.isEmpty()) {
+			team16Entity.setUsername(newname);
+			team16Entity.setBattle_count(0);
+			team16Entity.setWin_count(0);
+			team16Entity.setWin_percent(0.000);
 			team16LoginService.save(team16Entity);
-			return "team16/Account/Team16AccountOut";
+			
+			return "redirect:/login1";
 		}else {
 			model.addAttribute("message","**既に使用されているアカウント名です**");
 		}	
 		return "team16/Account/Team16AccountIn";
+	}
+	
+	@PostMapping(value = "/account1", params = "back")
+	public String sendLogin(@ModelAttribute Team16GameForm team16GameForm){
+		return "redirect:/login1";
 	}
 
 }

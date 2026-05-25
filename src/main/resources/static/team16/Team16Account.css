@@ -1,0 +1,44 @@
+@charset "UTF-8";
+
+body{
+	background-color: black;
+}
+
+.moji{
+	color: white;
+	font-weight: bold;
+	text-align: center;
+}
+
+.username{
+	width: 90%;
+	padding: 12px;
+	border: 2px solid gainsboro;
+	
+}
+.error1,
+.error2{
+	color: red;
+}
+
+.addac,
+.back{
+	width: 95%;
+ 	padding: 12px;
+	margin: 10px;
+	border: none;
+	border-radius: 10px;
+	font-size: 16px;
+	font-weight: bold;
+	cursor: pointer;
+	transition: 0.3s;
+}
+
+.addac{
+	background-color:darkseagreen ;
+	color: white;
+}
+.back{
+	background-color: dodgerblue;
+	color: white;
+}
