@@ -39,9 +39,9 @@ public class Team16AccountController {
 		
 		if(userList.isEmpty()) {
 			team16Entity.setUsername(newname);
-			team16Entity.setBattle_count(0);
-			team16Entity.setWin_count(0);
-			team16Entity.setWin_percent(0.000);
+			team16Entity.setBattleCount(0);
+			team16Entity.setWinCount(0);
+			team16Entity.setWinPercent(0.000);
 			team16LoginService.save(team16Entity);
 			
 			return "redirect:/login1";

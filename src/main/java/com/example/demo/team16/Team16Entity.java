@@ -1,5 +1,6 @@
 package com.example.demo.team16;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
@@ -13,12 +14,12 @@ public class Team16Entity {
 	
 	@Id
 	private String username;
-	//@Column(name="battle_count")
-	private Integer battle_count;
-	//@Column(name="win_persent")
-	private Double win_percent;
-	//@Column(name="win_count")
-	private Integer win_count;
+	@Column(name="battle_count")
+	private Integer battleCount;
+	@Column(name="win_percent")
+	private Double winPercent;
+	@Column(name="win_count")
+	private Integer winCount;
 	
 
 }

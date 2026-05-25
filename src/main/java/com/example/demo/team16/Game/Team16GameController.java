@@ -51,21 +51,21 @@ public class Team16GameController {
     	
     	Team16Entity black = team16GameService.findByUsernameEquals(team16GameForm.black); 
     	Team16Entity white = team16GameService.findByUsernameEquals(team16GameForm.white);
-    	black.setBattle_count(black.getBattle_count()+1);
-    	white.setBattle_count(white.getBattle_count()+1);
+    	black.setBattleCount(black.getBattleCount()+1);
+    	white.setBattleCount(white.getBattleCount()+1);
     	
     	if(t==1) {
-    		black.setWin_count(black.getWin_count()+1);
+    		black.setWinCount(black.getWinCount()+1);
     	}else if(t==2) {
-    		white.setWin_count(white.getWin_count()+1);
+    		white.setWinCount(white.getWinCount()+1);
     	}
-    	double win_count=black.getWin_count();
-    	double battle_count=black.getBattle_count();
-    	black.setWin_percent(win_count/battle_count);
+    	double win_count=black.getWinCount();
+    	double battle_count=black.getBattleCount();
+    	black.setWinPercent(win_count/battle_count);
     	
-    	win_count=white.getWin_count();
-    	battle_count=white.getBattle_count();
-    	white.setWin_percent(win_count/battle_count);
+    	win_count=white.getWinCount();
+    	battle_count=white.getBattleCount();
+    	white.setWinPercent(win_count/battle_count);
     	
     	team16GameService.save(black);
     	team16GameService.save(white);
@@ -95,22 +95,22 @@ public class Team16GameController {
     	
     	Team16Entity black = team16GameService.findByUsernameEquals(team16GameForm.black); 
     	Team16Entity white = team16GameService.findByUsernameEquals(team16GameForm.white);
-    	black.setBattle_count(black.getBattle_count()+1);
-    	white.setBattle_count(white.getBattle_count()+1);
+    	black.setBattleCount(black.getBattleCount()+1);
+    	white.setBattleCount(white.getBattleCount()+1);
     	
     	if(t==1) {
-    		black.setWin_count(black.getWin_count()+1);
+    		black.setWinCount(black.getWinCount()+1);
     	}else if(t==2) {
-    		white.setWin_count(white.getWin_count()+1);
+    		white.setWinCount(white.getWinCount()+1);
     	}
     	
-    	double win_count=black.getWin_count();
-    	double battle_count=black.getBattle_count();
-    	black.setWin_percent(win_count/battle_count);
+    	double win_count=black.getWinCount();
+    	double battle_count=black.getBattleCount();
+    	black.setWinPercent(win_count/battle_count);
     	
-    	win_count=white.getWin_count();
-    	battle_count=white.getBattle_count();
-    	white.setWin_percent(win_count/battle_count);
+    	win_count=white.getWinCount();
+    	battle_count=white.getBattleCount();
+    	white.setWinPercent(win_count/battle_count);
     	
     	team16GameService.save(black);
     	team16GameService.save(white);
