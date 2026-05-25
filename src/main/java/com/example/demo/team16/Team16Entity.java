@@ -13,8 +13,11 @@ public class Team16Entity {
 	
 	@Id
 	private String username;
+	//@Column(name="battle_count")
 	private Integer battle_count;
+	//@Column(name="win_persent")
 	private Double win_percent;
+	//@Column(name="win_count")
 	private Integer win_count;
 	
 

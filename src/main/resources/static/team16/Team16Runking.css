@@ -1,0 +1,39 @@
+.restart{
+	width:120px;
+	height:30px;
+    font-size: 14px;
+    border: 1px solid black;
+    border-radius: 3px;
+    background-color: rgb(192, 192, 192);
+	margin:auto;
+}
+
+table{
+    margin:50px auto;
+    border-collapse: collapse;
+    width: 70%;
+    background-color: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+body{
+    font-family: sans-serif;
+    text-align: center;
+}
+
+th{
+    background-color: #222;
+    color: white;
+    padding: 15px;
+    font-size: 20px;
+}
+
+td{
+	background-color: #ddd;
+    padding: 12px;
+    border-bottom: 1px solid #ccc;
+    font-size: 18px;
+}
+

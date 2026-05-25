@@ -1,5 +1,7 @@
 package com.example.demo.team16.Service;
 
+import java.util.List;
+
 import org.springframework.stereotype.Service;
 
 import com.example.demo.team16.Team16Entity;
@@ -18,6 +20,10 @@ public class Team16GameService {
 	
     public void save(Team16Entity entity){
         repository.save(entity);
+    }
+    
+    public List<Team16Entity> findAllByOrderByWinCount(){
+    	return repository.findAllByOrderByWinCount();
     }
 
 	

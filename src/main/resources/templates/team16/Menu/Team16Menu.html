@@ -11,7 +11,10 @@
 	</h1>
 	<form method="get" th:action="@{/login1}">
 		<br><br><br>
-		<p><input type="submit" value="ログイン画面に進む"/></p>
+		<p><input class="login" type="submit" value="ログイン画面へ"/></p>
+	</form>
+	<form method="post" th:action="@{/runking}">
+		<p><input class="runking" type="submit" value="ランキング"/></p>
 	</form>
 	
 </body>
