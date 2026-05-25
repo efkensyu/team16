@@ -44,7 +44,7 @@ public class Team16AccountController {
 			team16Entity.setWinPercent(0.000);
 			team16LoginService.save(team16Entity);
 			
-			return "redirect:/login1";
+			return "team16/NewAccount/Team16NewAccountIn";
 		}else {
 			model.addAttribute("message","**既に使用されているアカウント名です**");
 		}	

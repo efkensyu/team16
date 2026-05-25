@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" type="text/css" th:href="@{team16/Team16NewAccount.css}">
+</head>
+<body>
+	<form method="post" th:action="@{/Team16New1}" th:object="${team16AccountForm}">
+	<p class="username" th:text= "*{username}"></p>
+	<p class="moji">の登録に成功しました！やったね！</p>
+	<input class="login" type ="submit" name="login" value ="ログイン画面に戻る">
+	</form>
+</body>
+</html>
