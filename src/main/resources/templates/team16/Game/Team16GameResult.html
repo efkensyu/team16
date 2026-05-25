@@ -41,12 +41,16 @@
 			<span th:text="'黒: ' + ${team16GameForm.blackCount}"></span>
 			<span class=space th:text="'    白: ' + ${team16GameForm.whiteCount}"></span>
 		</h2>
-		<form method="get" th:action="@{/Game}">
-					<button class="restart" type="submit">リスタート</button>
-		</form>
-		<form method="get" th:action="@{/Team16Menu}">
-					<button class="restart" type="submit">メニュー画面へ</button>
-		</form>
+		<table>
+			<tr>
+			<td><form method="get" th:action="@{/Game}">
+				<button class="restart" type="submit">リスタート</button>
+			</form></td>
+				<td><form method="get" th:action="@{/Team16Menu}">
+				<button class="restart" type="submit">メニュー画面へ</button>
+			</form></td>
+				</tr>
+		</table>
 	
 	
 </body>
