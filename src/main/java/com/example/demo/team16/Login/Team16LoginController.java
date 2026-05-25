@@ -96,6 +96,11 @@ public class Team16LoginController {
 		public String sendMenu(@ModelAttribute Team16GameForm team16GameForm) {
 			return "team16/Menu/Team16Menu";
 		}
+		
+		@PostMapping(value = "/login1", params = "add")
+		public String sendAccount(@ModelAttribute Team16GameForm team16GameForm) {
+			return "redirect:/account1";
+		}
  
 	
 

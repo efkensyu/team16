@@ -13,4 +13,5 @@ public class Team16GameForm {
 	public String white;
 	public int blackCount;
 	public int whiteCount;
+	
 }
