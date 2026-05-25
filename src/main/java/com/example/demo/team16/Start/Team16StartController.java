@@ -19,7 +19,7 @@ import lombok.RequiredArgsConstructor;
 public class Team16StartController {
 	private final Team16StartService team16StartService;
 	
-	@GetMapping("/start")
+	@GetMapping("/Team16start")
 	public String index(@ModelAttribute Team16GameForm team16GameForm, Model model){
 		List<Team16Entity>userDataBlack = team16StartService. findByUsernameEquals(team16GameForm.black);
 		model.addAttribute("userDataBlack",userDataBlack);
@@ -31,7 +31,7 @@ public class Team16StartController {
 	
 	
 	
-	@PostMapping(value="/game",params="menu")
+	@PostMapping(value="/Team16Game",params="menu")
 	public String send2() {
 		return "team16/Menu/Team16Menu";
 	}

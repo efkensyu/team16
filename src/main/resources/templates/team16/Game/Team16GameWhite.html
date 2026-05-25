@@ -11,7 +11,7 @@
 		<th:block th:object="${team16GameForm}">
 		<tr th:each="y,i:*{board}">
 			<td th:each="x,j:${y}">
-				<form method="post" th:action="@{/Black}">
+				<form method="post" th:action="@{/Team16Black}">
 	                <input type="hidden" name="x" th:value="${j.index}" >
 	                <input type="hidden" name="y" th:value="${i.index}" >
 					<input type="hidden" name="n" th:value="${x}" >
@@ -34,7 +34,7 @@
 	
 	<table>
 	<tr>
-	<td><form method="get" th:action="@{/Game}">
+	<td><form method="get" th:action="@{/Team16Game}">
 		<button class="restart" type="submit">リスタート</button>
 	</form></td>
 		<td><form method="get" th:action="@{/Team16Menu}">

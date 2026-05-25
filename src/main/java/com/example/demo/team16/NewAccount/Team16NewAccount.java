@@ -18,7 +18,7 @@ public class Team16NewAccount {
 	
 	@PostMapping("/Team16New1")
 	public String sendLogin(@ModelAttribute Team16AccountForm team16AccountForm){	
-		return "redirect:/login1";
+		return "redirect:/Team16login1";
 	}
 	
 }

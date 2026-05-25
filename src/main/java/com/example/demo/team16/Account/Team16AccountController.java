@@ -21,12 +21,12 @@ import lombok.RequiredArgsConstructor;
 public class Team16AccountController {
 	private final Team16LoginsService team16LoginService;
 
-	@GetMapping("/account1")	
+	@GetMapping("/Team16account1")	
 	public String index(@ModelAttribute Team16AccountForm team16AccountForm ) {	
 		return "team16/Account/Team16AccountIn";
 	}
 	
-	@PostMapping("/account1")
+	@PostMapping(value="/Team16account1",params="addac")
 	public String createUser( @Validated @ModelAttribute Team16AccountForm team16AccountForm,BindingResult result,Model model ) {
 		
 		if(result.hasErrors()) {
@@ -51,9 +51,9 @@ public class Team16AccountController {
 		return "team16/Account/Team16AccountIn";
 	}
 	
-	@PostMapping(value = "/account1", params = "back")
+	@PostMapping(value = "/Team16account1", params = "back")
 	public String sendLogin(@ModelAttribute Team16GameForm team16GameForm){
-		return "redirect:/login1";
+		return "redirect:/Team16login1";
 	}
 
 }

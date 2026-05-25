@@ -17,9 +17,11 @@ import com.example.demo.team16.Service.Team16LoginsService;
 import com.example.demo.team16.Service.Team16StartService;
 
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 
 @RequiredArgsConstructor
 @Controller
+@Slf4j
 @SessionAttributes("team16GameForm")
 public class Team16LoginController {
 	private final Team16LoginsService team16LoginsService;
@@ -27,17 +29,21 @@ public class Team16LoginController {
 	
 		@ModelAttribute("team16GameForm")
 		public Team16GameForm setupTeam16GameForm() {
+			log.info("ログイン画面:setupTeam16GameFormメソッド実行");
 			return new Team16GameForm();
 		}
 	
 	
-		@GetMapping("/login1")	
-		public String index(@ModelAttribute Team16GameForm team16GameForm ) {	
+		@GetMapping("/Team16login1")	
+		public String index(@ModelAttribute Team16GameForm team16GameForm ) {
+			log.info("ログイン画面:Getメソッド実行");
 			return "team16/Login/Team16LoginIn";
 		}
 		
-		@PostMapping("/login1")	
+		@PostMapping(value="/Team16login1",params="login")	
 		public String send(@ModelAttribute @Validated Team16GameForm team16GameForm,BindingResult result,Model model) {
+			
+			log.info("ログイン画面:Postメソッド実行");
 			
 			if(result.hasErrors()) {
 				return "team16/Login/Team16LoginIn";
@@ -92,14 +98,16 @@ public class Team16LoginController {
 		}
 	
 		
-		@PostMapping(value = "/login1", params = "menu")
+		@PostMapping(value = "/Team16login1", params = "menu")
 		public String sendMenu(@ModelAttribute Team16GameForm team16GameForm) {
+			log.info("ログイン画面:Postメソッド実行");
 			return "team16/Menu/Team16Menu";
 		}
 		
-		@PostMapping(value = "/login1", params = "add")
+		@PostMapping(value = "/Team16login1", params = "add")
 		public String sendAccount(@ModelAttribute Team16GameForm team16GameForm) {
-			return "redirect:/account1";
+			log.info("ログイン画面:Postメソッド実行");
+			return "redirect:/Team16account1";
 		}
  
 	

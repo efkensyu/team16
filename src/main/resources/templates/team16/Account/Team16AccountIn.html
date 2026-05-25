@@ -7,7 +7,7 @@
 
 </head>
 <body>
-	<form method="post" th:action="@{/account1}" th:object="${team16AccountForm}">
+	<form method="post" th:action="@{/Team16account1}" th:object="${team16AccountForm}">
 	<p class="moji">新規アカウント作成</p>
 	<input class="username" type ="text" th:field="*{username}">
 	<p class="error1" th:if="${#fields.hasErrors('username')}" th:errors="*{username}"></p>

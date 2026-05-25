@@ -21,7 +21,7 @@ public class Team16GameController {
 	
 	Team16GameMethod method = new Team16GameMethod();
 
-    @GetMapping("/Game")
+    @GetMapping("/Team16Game")
     public String Start(@ModelAttribute Team16GameForm team16GameForm ) {
     	
     	method.createBoard(team16GameForm);
@@ -29,7 +29,7 @@ public class Team16GameController {
         return "team16/Game/Team16GameBlack";
     }
     
-    @PostMapping("/White")
+    @PostMapping("/Team16White")
     public String White(@ModelAttribute Team16GameForm team16GameForm ,@RequestParam int x,int y,int n) {
     	int t;
     	if(n !=3) {
@@ -73,7 +73,7 @@ public class Team16GameController {
     	return "team16/Game/Team16GameResult";
     }
     
-    @PostMapping("/Black")
+    @PostMapping("/Team16Black")
     public String Black(@ModelAttribute Team16GameForm team16GameForm,@RequestParam int x,int y,int n) {
     	int t;
     	if(n !=3) {
