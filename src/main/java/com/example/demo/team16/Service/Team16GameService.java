@@ -23,7 +23,7 @@ public class Team16GameService {
     }
     
     public List<Team16Entity> findAllByOrderByWinCount(){
-    	return repository.findAllByOrderByWinCount();
+    	return repository.findAllByOrderByWinCountDesc();
     }
 
 	
