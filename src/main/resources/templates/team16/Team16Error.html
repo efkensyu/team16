@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<link rel="stylesheet" th:href="@{team16/Team16Game.css}">
+<meta charset="UTF-8">
+<title>エラー</title>
+</head>
+<body>
+
+<h1>エラーが発生しました</h1>
+
+<p th:text="${errorMessage}"></p>
+<form method="get" th:action="@{/Team16Menu}">
+	<button class="restart" type="submit">メニュー画面へ</button>
+</form>
+
+</body>
+</html>

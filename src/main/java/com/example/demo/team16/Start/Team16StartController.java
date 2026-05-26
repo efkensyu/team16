@@ -37,7 +37,6 @@ public class Team16StartController {
 	
 	@PostMapping(value="/Team16Game",params="menu")
 	public String send2() {
-		log.info("スタート画面:Postメソッド実行");
 		return "team16/Menu/Team16Menu";
 	}
 

@@ -29,22 +29,19 @@ public class Team16LoginController {
 	
 		@ModelAttribute("team16GameForm")
 		public Team16GameForm setupTeam16GameForm() {
-			log.info("ログイン画面:setupTeam16GameFormメソッド実行");
 			return new Team16GameForm();
 		}
 	
 	
 		@GetMapping("/Team16login1")	
 		public String index(@ModelAttribute Team16GameForm team16GameForm ) {
-			log.info("ログイン画面:Getメソッド実行");
 			return "team16/Login/Team16LoginIn";
 		}
 		
 		@PostMapping(value="/Team16login1",params="login")	
 		public String send(@ModelAttribute @Validated Team16GameForm team16GameForm,BindingResult result,Model model) {
 			
-			log.info("ログイン画面:Postメソッド実行");
-			
+			try {
 			if(result.hasErrors()) {
 				return "team16/Login/Team16LoginIn";
 			}
@@ -95,18 +92,20 @@ public class Team16LoginController {
 			model.addAttribute("blackPlayer", blackPlayer);
 			model.addAttribute("whitePlayer", whitePlayer);
 			return "team16/Start/Team16Start";
+			}catch(Exception e) {
+				return "team16/Team16Error";
+			}
 		}
+			
 	
 		
 		@PostMapping(value = "/Team16login1", params = "menu")
 		public String sendMenu(@ModelAttribute Team16GameForm team16GameForm) {
-			log.info("ログイン画面:Postメソッド実行");
 			return "team16/Menu/Team16Menu";
 		}
 		
 		@PostMapping(value = "/Team16login1", params = "add")
 		public String sendAccount(@ModelAttribute Team16GameForm team16GameForm) {
-			log.info("ログイン画面:Postメソッド実行");
 			return "redirect:/Team16account1";
 		}
  

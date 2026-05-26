@@ -25,9 +25,6 @@ public class Team16GameController {
 
     @GetMapping("/Team16Game")
     public String Start(@ModelAttribute Team16GameForm team16GameForm ) {
-    	
-    	log.info("オセロ画面:Getメソッド実行");
-    	
     	method.createBoard(team16GameForm);
         method.checkBoard(team16GameForm,1,2);
         return "team16/Game/Team16GameBlack";
@@ -35,7 +32,6 @@ public class Team16GameController {
     
     @PostMapping("/Team16White")
     public String White(@ModelAttribute Team16GameForm team16GameForm ,@RequestParam int x,int y,int n) {
-    	log.info("オセロ画面:Postメソッド実行(Team16White)");
     	int t;
     	if(n !=3) {
     		return "team16/Game/Team16GameBlack";
@@ -80,7 +76,6 @@ public class Team16GameController {
     
     @PostMapping("/Team16Black")
     public String Black(@ModelAttribute Team16GameForm team16GameForm,@RequestParam int x,int y,int n) {
-    	log.info("オセロ画面:Postメソッド実行(Team16Black)");
     	int t;
     	if(n !=3) {
     		return "team16/Game/Team16GameWhite";

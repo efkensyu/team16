@@ -15,14 +15,12 @@ public class Team16NewAccount {
 
 	@GetMapping("/Team16New1")	
 	public String index(@ModelAttribute Team16AccountForm team16AccountForm ) {	
-		log.info("アカウント作成完了画面:Getメソッド実行");
 		return "team16/NewAccount/Team16NewAccountIn";
 	}
 	
 	
 	@PostMapping("/Team16New1")
 	public String sendLogin(@ModelAttribute Team16AccountForm team16AccountForm){	
-		log.info("アカウント作成完了画面:Postメソッド実行");
 		return "redirect:/Team16login1";
 	}
 	

@@ -22,18 +22,17 @@ import lombok.extern.slf4j.Slf4j;
 		
 		@GetMapping("/Team16Menu")
 		public String index(){
-			log.info("メニュー画面:Getメソッド実行");
 			return "team16/Menu/Team16Menu";
 		}
 		
 		@PostMapping("/Team16login")
 		public String send() {
-			log.info("メニュー画面:Postメソッド実行");
 			return "team16/Login/Team16LoginIn";
 		}
 		
 		@PostMapping("/Team16runking")
 		public String runking(Model model) {
+			try {
 			List<Team16Entity> runking =team16GameService.findAllByOrderByWinCount();
 			int[] t = new int[runking.size()];
 			int s=-1;
@@ -49,8 +48,10 @@ import lombok.extern.slf4j.Slf4j;
 			}
 			model.addAttribute("count",t);
 			model.addAttribute("runking",runking);
-			log.info("メニュー画面:Postソッド実行");
 			return "team16/Menu/Team16Runking";
+			}catch(Exception e) {
+				return "team16/Team16Error";
+			}
 		}
 		
 		
