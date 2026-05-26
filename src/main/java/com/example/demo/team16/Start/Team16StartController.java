@@ -13,14 +13,18 @@ import com.example.demo.team16.Game.Team16GameForm;
 import com.example.demo.team16.Service.Team16StartService;
 
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 
+@Slf4j
 @Controller
 @RequiredArgsConstructor
 public class Team16StartController {
 	private final Team16StartService team16StartService;
 	
+	
 	@GetMapping("/Team16start")
 	public String index(@ModelAttribute Team16GameForm team16GameForm, Model model){
+		log.info("スタート画面:Getメソッド実行");
 		List<Team16Entity>userDataBlack = team16StartService. findByUsernameEquals(team16GameForm.black);
 		model.addAttribute("userDataBlack",userDataBlack);
 		List<Team16Entity>userDataWhite = team16StartService. findByUsernameEquals(team16GameForm.white);
@@ -33,6 +37,7 @@ public class Team16StartController {
 	
 	@PostMapping(value="/Team16Game",params="menu")
 	public String send2() {
+		log.info("スタート画面:Postメソッド実行");
 		return "team16/Menu/Team16Menu";
 	}
 

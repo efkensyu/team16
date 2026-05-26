@@ -26,7 +26,7 @@
 	<span class="kekka" th:each="data : ${userDataBlack}">
 		<span th:text="'勝利数：'+${data.winCount}+'/'+${data.battleCount}"></span>
 		
-		<span class="kekka" th:text="'勝率：'+${data.winPercent}"></span>
+		<span class="kekka" th:text="'勝率：'+${data.winPercent}+'%'"></span>
 	</span>
 	<span class="kekka" th:each="data : ${userDataBlack}">
 	</span>
@@ -39,7 +39,7 @@
 	
 	<span class="kekka" th:each="data : ${userDataWhite}">
 			<span th:text="'勝利数：'+${data.winCount}+'/'+${data.battleCount}"></span>
-			<span class="kekka" th:text="'勝率：'+${data.winPercent}"></span>
+			<span class="kekka" th:text="'勝率：'+${data.winPercent}+'%'"></span>
 		</span>
 		<span class="kekka" th:each="data : ${userDataWhite}">
 		</span>

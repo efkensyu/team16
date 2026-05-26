@@ -35,6 +35,19 @@ import lombok.extern.slf4j.Slf4j;
 		@PostMapping("/Team16runking")
 		public String runking(Model model) {
 			List<Team16Entity> runking =team16GameService.findAllByOrderByWinCount();
+			int[] t = new int[runking.size()];
+			int s=-1;
+			int i=0;
+			int count=0;
+			for(Team16Entity r : runking) {
+				if(s!=r.getWinCount()) {
+					count=i+1;
+				}
+				t[i] = count;
+				i++;
+				s=r.getWinCount();
+			}
+			model.addAttribute("count",t);
 			model.addAttribute("runking",runking);
 			log.info("メニュー画面:Postソッド実行");
 			return "team16/Menu/Team16Runking";

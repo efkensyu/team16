@@ -15,7 +15,7 @@
 			<th>勝率</th>
 		</tr>
 		<tr th:each="data,i:${runking}">
-			<td th:text="${i.count}+位"></td>
+			<td th:text="${count[i.index]}+位"></td>
 			<td th:text="${data.username}"></td>
 			<td th:text="${data.winCount}"></td>
 			<td th:text="${data.winPercent}+'%'"></td>

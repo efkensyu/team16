@@ -11,7 +11,9 @@ import com.example.demo.team16.Team16Entity;
 import com.example.demo.team16.Service.Team16GameService;
 
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 
+@Slf4j
 @RequiredArgsConstructor
 @Controller
 @SessionAttributes("team16GameForm")
@@ -24,6 +26,8 @@ public class Team16GameController {
     @GetMapping("/Team16Game")
     public String Start(@ModelAttribute Team16GameForm team16GameForm ) {
     	
+    	log.info("オセロ画面:Getメソッド実行");
+    	
     	method.createBoard(team16GameForm);
         method.checkBoard(team16GameForm,1,2);
         return "team16/Game/Team16GameBlack";
@@ -31,6 +35,7 @@ public class Team16GameController {
     
     @PostMapping("/Team16White")
     public String White(@ModelAttribute Team16GameForm team16GameForm ,@RequestParam int x,int y,int n) {
+    	log.info("オセロ画面:Postメソッド実行(Team16White)");
     	int t;
     	if(n !=3) {
     		return "team16/Game/Team16GameBlack";
@@ -61,11 +66,11 @@ public class Team16GameController {
     	}
     	double win_count=black.getWinCount();
     	double battle_count=black.getBattleCount();
-    	black.setWinPercent(win_count/battle_count);
+    	black.setWinPercent(win_count/battle_count*100);
     	
     	win_count=white.getWinCount();
     	battle_count=white.getBattleCount();
-    	white.setWinPercent(win_count/battle_count);
+    	white.setWinPercent(win_count/battle_count*100);
     	
     	team16GameService.save(black);
     	team16GameService.save(white);
@@ -75,6 +80,7 @@ public class Team16GameController {
     
     @PostMapping("/Team16Black")
     public String Black(@ModelAttribute Team16GameForm team16GameForm,@RequestParam int x,int y,int n) {
+    	log.info("オセロ画面:Postメソッド実行(Team16Black)");
     	int t;
     	if(n !=3) {
     		return "team16/Game/Team16GameWhite";
@@ -106,11 +112,11 @@ public class Team16GameController {
     	
     	double win_count=black.getWinCount();
     	double battle_count=black.getBattleCount();
-    	black.setWinPercent(win_count/battle_count);
+    	black.setWinPercent(win_count/battle_count*100);
     	
     	win_count=white.getWinCount();
     	battle_count=white.getBattleCount();
-    	white.setWinPercent(win_count/battle_count);
+    	white.setWinPercent(win_count/battle_count*100);
     	
     	team16GameService.save(black);
     	team16GameService.save(white);

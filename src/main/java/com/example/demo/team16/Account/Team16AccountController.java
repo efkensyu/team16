@@ -15,7 +15,9 @@ import com.example.demo.team16.Game.Team16GameForm;
 import com.example.demo.team16.Service.Team16LoginsService;
 
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 
+@Slf4j
 @RequiredArgsConstructor
 @Controller
 public class Team16AccountController {
@@ -23,12 +25,13 @@ public class Team16AccountController {
 
 	@GetMapping("/Team16account1")	
 	public String index(@ModelAttribute Team16AccountForm team16AccountForm ) {	
+		log.info("アカウント作成画面:Getメソッド実行");
 		return "team16/Account/Team16AccountIn";
 	}
 	
 	@PostMapping(value="/Team16account1",params="addac")
 	public String createUser( @Validated @ModelAttribute Team16AccountForm team16AccountForm,BindingResult result,Model model ) {
-		
+		log.info("アカウント作成画面:Postメソッド実行");
 		if(result.hasErrors()) {
 			return "team16/Account/Team16AccountIn";
 		}
@@ -53,6 +56,7 @@ public class Team16AccountController {
 	
 	@PostMapping(value = "/Team16account1", params = "back")
 	public String sendLogin(@ModelAttribute Team16GameForm team16GameForm){
+		log.info("アカウント作成画面:Postメソッド実行");
 		return "redirect:/Team16login1";
 	}
 
