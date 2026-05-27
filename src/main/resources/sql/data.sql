@@ -4,3 +4,5 @@ INSERT INTO team16_users_tbl VALUES('齋藤', 5 ,  80.000 , 4);
 INSERT INTO team16_users_tbl VALUES('内田', 6 , 50.000 , 3);
 INSERT INTO team16_users_tbl VALUES('金子', 6 , 83.333 , 5);
 INSERT INTO team16_users_tbl VALUES('服部', 8 , 75.000 , 6);
+INSERT INTO team16_users_tbl VALUES('小畑', 5 , 40.000 , 2);
+INSERT INTO team16_users_tbl VALUES('酒巻', 6 , 83.333 , 5);

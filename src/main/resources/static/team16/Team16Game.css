@@ -62,3 +62,85 @@ h2{
 .space{
     margin-left: 30px;
 }
+
+.greyB,.greyW{
+
+    animation: pulse 1s infinite;
+}
+
+@keyframes pulse{
+    0%{
+        transform:scale(1);
+    }
+    50%{
+        transform:scale(1.1);
+    }
+    100%{
+        transform:scale(1);
+    }
+}
+.blackToWhite{
+    animation: blackToWhite 0.4s ease;
+}
+
+@keyframes blackToWhite{
+
+    0%{
+
+        background:black;
+
+        transform:rotateY(0deg);
+    }
+
+    50%{
+
+        background:black;
+
+        transform:rotateY(90deg);
+    }
+
+    51%{
+
+        background:white;
+    }
+
+    100%{
+
+        background:white;
+
+        transform:rotateY(180deg);
+    }
+}
+
+.whiteToBlack{
+    animation: whiteToBlack 0.4s ease;
+}
+
+@keyframes whiteToBlack{
+
+    0%{
+
+        background:white;
+
+        transform:rotateY(0deg);
+    }
+
+    50%{
+
+        background:white;
+
+        transform:rotateY(90deg);
+    }
+
+    51%{
+
+        background:black;
+    }
+
+    100%{
+
+        background:black;
+
+        transform:rotateY(180deg);
+    }
+}

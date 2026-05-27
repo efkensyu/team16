@@ -17,7 +17,7 @@ public class Team16GameMethod {
 		    board[3][4] = 1;
 		    board[4][3] = 1;
 		    board[4][4] = 2;
-		 
+		    resetEffectBoard(form);
 			form.board=board;
 	}
 	
@@ -31,6 +31,34 @@ public class Team16GameMethod {
 	         }
 	     }
 	}
+	//saveボードセット
+		public void saveBoard(Team16GameForm form) {
+			for (int i = 0; i < 8; i++) {
+				for (int j = 0; j < 8; j++) {
+					form.saveBoard[i][j] = form.board[i][j];
+				}
+			}
+		}
+	//effectボードセット
+	public void effectBoard(Team16GameForm form,int x,int y) {
+		for (int i = 0; i < 8; i++) {
+			for (int j = 0; j < 8; j++) {
+				if(form.board[i][j] != form.saveBoard[i][j]) {
+					form.effectBoard[i][j] = true;
+				}
+			}
+		}
+		form.effectBoard[y][x]=false;
+	}
+	
+	//effectボードリセット
+		public void resetEffectBoard(Team16GameForm form) {
+			for (int i = 0; i < 8; i++) {
+				for (int j = 0; j < 8; j++) {
+					form.effectBoard[i][j] = false;
+				}
+			}
+		}
 	
 	//集計
 	public int resultBoard(Team16GameForm form){

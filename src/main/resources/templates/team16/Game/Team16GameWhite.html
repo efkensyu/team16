@@ -16,9 +16,17 @@
 	                <input type="hidden" name="y" th:value="${i.index}" >
 					<input type="hidden" name="n" th:value="${x}" >
 
-	                <button type="submit" class="board">
-						<div th:if="${x == 1}" class="black"></div>
-						<div th:if="${x == 2}" class="white"></div>	
+	                <button type="submit" class="board" th:disabled="${x != 3}">
+						<div th:if="${x == 1}"
+							th:class="${team16GameForm.effectBoard[i.index][j.index]}
+								? 'black whiteToBlack'
+								: 'black'">
+						</div>
+						<div th:if="${x == 2}"
+							th:class="${team16GameForm.effectBoard[i.index][j.index]}
+							? 'white blackToWhite'
+							: 'white'">
+						</div>
 						<div th:if="${x == 3}" class="greyW"></div>						
 	                </button>
 	            </form>

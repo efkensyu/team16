@@ -27,6 +27,7 @@ public class Team16GameController {
     public String Start(@ModelAttribute Team16GameForm team16GameForm ) {
     	method.createBoard(team16GameForm);
         method.checkBoard(team16GameForm,1,2);
+        method.saveBoard(team16GameForm);
         return "team16/Game/Team16GameBlack";
     }
     
@@ -37,7 +38,13 @@ public class Team16GameController {
     	if(n !=3) {
     		return "team16/Game/Team16GameBlack";
     	}
+    	method.resetEffectBoard(team16GameForm);
+    	
     	method.setBoard(team16GameForm,x,y,1,2);
+    	method.effectBoard(team16GameForm,x,y);
+    	method.saveBoard(team16GameForm);
+    	
+    	
     	boolean pass2=method.checkBoard(team16GameForm,2,1);
     	if(pass2) {
     		return "team16/Game/Team16GameWhite";
@@ -85,7 +92,12 @@ public class Team16GameController {
     	if(n !=3) {
     		return "team16/Game/Team16GameWhite";
     	}
+    	method.resetEffectBoard(team16GameForm);
     	method.setBoard(team16GameForm,x,y,2,1);
+    	
+    	method.effectBoard(team16GameForm,x,y);
+    	method.saveBoard(team16GameForm);
+    	
     	boolean pass2=method.checkBoard(team16GameForm,1,2);
     	if(pass2) {
     		return "team16/Game/Team16GameBlack";
