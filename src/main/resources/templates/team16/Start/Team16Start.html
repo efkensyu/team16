@@ -6,46 +6,37 @@
 <link rel="stylesheet" type="text/css" th:href="@{team16/Team16Start.css}">
 </head>
 <body>
-	<h1>
+	<h1 class="title">
 		見附オセロ
 	</h1>
 	<form method="post" th:action="@{/Team16Game}" th:object="${team16GameForm}">
-		<br><br><br>
+		<br>
 		<input type="hidden" th:field="*{black}">
 		<input type="hidden" th:field="*{white}">
 
 		<p><input type="submit"value="ゲームスタート" th:formaction="@{/Team16Game}"
-		              formmethod="get"/></p>
+		              formmethod="get" class="start"/></p>
 	
-	<p><input type="submit"name="menu" value="メニューに戻る"/></p>
-	
-		
-	<br><br><br>
-	<span class="kekka"  th:text="'黒プレイヤー：'+*{black} "></span>	
-	
-	<span class="kekka" th:each="data : ${userDataBlack}">
-		<span th:text="'勝利数：'+${data.winCount}+'/'+${data.battleCount}"></span>
-		
-		<span class="kekka" th:text="'勝率：'+${data.winPercent}+'%'"></span>
-	</span>
-	<span class="kekka" th:each="data : ${userDataBlack}">
-	</span>
-	<span class="kekka" th:each="data : ${userDataBlack}">
-	</span>
-	
+	<p><input type="submit"name="menu" value="メニューに戻る" class="menu"/></p>
 	<br>
-	
-	<span class="kekka"  th:text="'白プレイヤー：'+*{white} "></span>
-	
-	<span class="kekka" th:each="data : ${userDataWhite}">
-			<span th:text="'勝利数：'+${data.winCount}+'/'+${data.battleCount}"></span>
-			<span class="kekka" th:text="'勝率：'+${data.winPercent}+'%'"></span>
-		</span>
-		<span class="kekka" th:each="data : ${userDataWhite}">
-		</span>
-		<span class="kekka" th:each="data : ${userDataWhite}">
-		</span>
-	
-	</form>	
+	<table>
+		<tr>
+			<td><span class="kekka"  th:text="'黒プレイヤー：'+*{black}"></span></td>
+			<th:block class="kekka" th:each="data : ${userDataBlack}">
+				<td class="kekka" th:text="'勝利数：'+${data.winCount}"></td>
+				<td class="kekka" th:text="'試合数：'+${data.battleCount}"></td>
+				<td class="kekka" th:text="'勝率：'+${data.winPercent}+'%'"></td>
+			</th:block>
+		</tr>
+		<tr>
+			<td><span class="kekka"  th:text="'白プレイヤー：'+*{white}"></span></td>
+			<th:block class="kekka" th:each="data : ${userDataWhite}">
+				<td class="kekka" th:text="'勝利数：'+${data.winCount}"></td>
+				<td class="kekka" th:text="'試合数：'+${data.battleCount}"></td>
+				<td class="kekka" th:text="'勝率：'+${data.winPercent}+'%'"></td>
+			</th:block>
+		</tr>	
+	</table>
+	</form>
 </body>
 </html>

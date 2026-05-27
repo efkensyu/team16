@@ -8,10 +8,10 @@
 <body>
 	<h2>
 		<span th:if="${team16GameForm.blackCount>team16GameForm.whiteCount}">
-			<span th:text="${team16GameForm.black}+'の勝利'"></span>
+			<span th:text="|🎊${team16GameForm.black}の勝利🎊|"></span>
 		</span>
 		<span th:if="${team16GameForm.blackCount<team16GameForm.whiteCount}">
-			<span th:text="${team16GameForm.white}+'の勝利'"></span>
+			<span th:text="|🎊${team16GameForm.white}の勝利🎊|"></span>
 		</span>
 		<span th:if="${team16GameForm.blackCount==team16GameForm.whiteCount}">
 			引き分け

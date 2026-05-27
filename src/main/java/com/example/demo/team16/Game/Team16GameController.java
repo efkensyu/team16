@@ -32,6 +32,7 @@ public class Team16GameController {
     
     @PostMapping("/Team16White")
     public String White(@ModelAttribute Team16GameForm team16GameForm ,@RequestParam int x,int y,int n) {
+    	try {
     	int t;
     	if(n !=3) {
     		return "team16/Game/Team16GameBlack";
@@ -72,10 +73,14 @@ public class Team16GameController {
     	team16GameService.save(white);
     	
     	return "team16/Game/Team16GameResult";
+    	}catch(Exception e) {
+			return "team16/Team16Error";
+		}
     }
     
     @PostMapping("/Team16Black")
     public String Black(@ModelAttribute Team16GameForm team16GameForm,@RequestParam int x,int y,int n) {
+    	try {
     	int t;
     	if(n !=3) {
     		return "team16/Game/Team16GameWhite";
@@ -117,6 +122,9 @@ public class Team16GameController {
     	team16GameService.save(white);
     	
     	return "team16/Game/Team16GameResult";
+    	}catch(Exception e) {
+			return "team16/Team16Error";
+		}
     }
     
 }

@@ -46,8 +46,23 @@ form{
 .addac{
 	background-color:rgb(0, 255, 64);
 	color: white;
+	box-shadow: 0 0 8px rgb(0, 255, 64);
 }
 .back{
 	background-color: dodgerblue;
 	color: white;
+	box-shadow: 0 0 8px dodgerblue;
+}
+.addac:hover{
+    transform: scale(1.03);
+    transition: 0.2s;
+    cursor: pointer;
+}
+.back:hover{
+    transform: scale(1.03);
+    transition: 0.2s;
+    cursor: pointer;
+}
+h2{
+	text-shadow: 0 0 5px azure;
 }

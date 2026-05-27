@@ -7,6 +7,7 @@ body{
 	font-weight: bold;
 	color: deeppink;
 	text-align: center;
+	text-shadow: 0 0 8px deeppink;
 }
 .moji{
 	color: white;
@@ -25,4 +26,17 @@ body{
 	font-weight: bold;
 	background-color: dodgerblue;
 	color: white;
+	box-shadow: 0 0 8px dodgerblue;
+}
+
+.login:hover{
+    transform: scale(1.03);
+    transition: 0.2s;
+    cursor: pointer;
+}
+
+form{
+	width: 60%;
+	margin: 0 auto;
+	text-align: center;
 }

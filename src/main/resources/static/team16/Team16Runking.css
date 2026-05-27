@@ -37,3 +37,9 @@ td{
     font-size: 18px;
 }
 
+.restart:hover{
+    transform: scale(1.03);
+    transition: 0.2s;
+    cursor: pointer;
+}
+

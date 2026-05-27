@@ -52,6 +52,12 @@ h2{
     border-radius: 3px;
     background-color: rgb(192, 192, 192);
 	margin:auto;
+	
+}
+.restart:hover{
+    transform: scale(1.03);
+    transition: 0.2s;
+    cursor: pointer;
 }
 .space{
     margin-left: 30px;

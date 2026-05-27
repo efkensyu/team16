@@ -7,6 +7,8 @@ body{
 	font-size: 24px;
 	font-weight: bold;
 	color: azure;
+	text-shadow: 0 0 5px azure;
+	
 }
 
 form{
@@ -42,16 +44,40 @@ form{
 .login{
 	background-color:dodgerblue;
 	color: white;
+	box-shadow: 0 0 9px dodgerblue;
 }
 
 .add{
 	background-color:rgb(0, 255, 64);
 	color: white;
+	box-shadow: 0 0 9px rgb(0, 255, 64);
+}
+
+.menu{
+	box-shadow: 0 0 9px white;
 }
 
 .start{
 	background-color:crimson;
 	color:white;
+}
+
+.login:hover{
+    transform: scale(1.03);
+    transition: 0.2s;
+    cursor: pointer;
+}
+
+.add:hover{
+    transform: scale(1.03);
+    transition: 0.2s;
+    cursor: pointer;
+}
+
+.menu:hover{
+    transform: scale(1.03);
+    transition: 0.2s;
+    cursor: pointer;
 }
 
 
