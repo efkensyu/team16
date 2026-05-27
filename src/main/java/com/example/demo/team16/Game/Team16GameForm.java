@@ -14,5 +14,5 @@ public class Team16GameForm {
 	public int blackCount;
 	public int whiteCount;
 	public int[][] saveBoard = new int[8][8];
-	public boolean[][] effectBoard = new boolean[8][8];
+	public int[][] effectBoard = new int[8][8];
 }

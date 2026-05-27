@@ -18,14 +18,18 @@
 					
 	                <button type="submit" class="board" th:disabled="${x != 3}">
 						<div th:if="${x == 1}"
-							th:class="${team16GameForm.effectBoard[i.index][j.index]}
+							th:class="${team16GameForm.effectBoard[i.index][j.index]==1}
 								? 'black whiteToBlack'
-								: 'black'">
+								: (team16GameForm.effectBoard[i.index][j.index]==2
+								? 'black put'
+								: 'black')">
 						</div>
 						<div th:if="${x == 2}"
-							th:class="${team16GameForm.effectBoard[i.index][j.index]}
+							th:class="${team16GameForm.effectBoard[i.index][j.index]==1}
 							? 'white blackToWhite'
-							: 'white'">
+							: (team16GameForm.effectBoard[i.index][j.index]==2
+							? 'white put'
+							: 'white')">
 						</div>
 						<div th:if="${x == 3}" class="greyB"></div>											
 	                </button>

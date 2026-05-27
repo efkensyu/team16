@@ -79,68 +79,71 @@ h2{
         transform:scale(1);
     }
 }
-.blackToWhite{
-    animation: blackToWhite 0.4s ease;
+
+.put{
+    animation: put 0.4s ease-out;
+    transform-origin: center;
+    display:block;
 }
 
-@keyframes blackToWhite{
+@keyframes put{
 
     0%{
-
-        background:black;
-
-        transform:rotateY(0deg);
+        transform: scale(0);
+        opacity: 0;
     }
 
-    50%{
-
-        background:black;
-
-        transform:rotateY(90deg);
-    }
-
-    51%{
-
-        background:white;
+    60%{
+        transform: scale(1.25);
+        opacity: 1;
     }
 
     100%{
+        transform: scale(1);
+        opacity: 1;
+    }
+}
 
+.blackToWhite{
+    animation: blackToWhite 0.5s ease;
+}
+
+@keyframes blackToWhite{
+    0%{
+        background:black;
+        transform:rotateY(0deg);
+    }
+    50%{
+        background:black;
+        transform:rotateY(90deg);
+    }
+    51%{
         background:white;
-
+    }
+    100%{
+        background:white;
         transform:rotateY(180deg);
     }
 }
 
 .whiteToBlack{
-    animation: whiteToBlack 0.4s ease;
+    animation: whiteToBlack 0.5s ease;
 }
 
 @keyframes whiteToBlack{
-
     0%{
-
         background:white;
-
         transform:rotateY(0deg);
     }
-
     50%{
-
         background:white;
-
         transform:rotateY(90deg);
     }
-
     51%{
-
         background:black;
     }
-
     100%{
-
         background:black;
-
         transform:rotateY(180deg);
     }
 }

@@ -44,18 +44,18 @@ public class Team16GameMethod {
 		for (int i = 0; i < 8; i++) {
 			for (int j = 0; j < 8; j++) {
 				if(form.board[i][j] != form.saveBoard[i][j]) {
-					form.effectBoard[i][j] = true;
+					form.effectBoard[i][j] = 1;
 				}
 			}
 		}
-		form.effectBoard[y][x]=false;
+		form.effectBoard[y][x]=2;
 	}
 	
 	//effectボードリセット
 		public void resetEffectBoard(Team16GameForm form) {
 			for (int i = 0; i < 8; i++) {
 				for (int j = 0; j < 8; j++) {
-					form.effectBoard[i][j] = false;
+					form.effectBoard[i][j] = 0;
 				}
 			}
 		}
