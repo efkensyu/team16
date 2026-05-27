@@ -6,6 +6,60 @@
 <title>Insert title here</title>
 </head>
 <body>
+	<div class="confetti" style="left:10%; background:red;"></div>
+	<div class="confetti" style="left:20%; background:blue; animation-delay:0.2s;"></div>
+	<div class="confetti" style="left:30%; background:yellow; animation-delay:0.4s;"></div>
+	<div class="confetti" style="left:40%; background:green; animation-delay:0.1s;"></div>
+	<div class="confetti" style="left:50%; background:pink; animation-delay:0.3s;"></div>
+	<div class="confetti" style="left:60%; background:orange; animation-delay:0.5s;"></div>
+	<div class="confetti" style="left:70%; background:purple; animation-delay:0.2s;"></div>
+	<div class="confetti" style="left:80%; background:cyan; animation-delay:0.6s;"></div>
+	
+	<div class="confetti"
+	     style="
+	     left:50%;
+	     top:50%;
+	     background:red;
+	     --x:-300px;
+	     --y:-250px;
+	"></div>
+
+	<div class="confetti"
+	     style="
+	     left:50%;
+	     top:50%;
+	     background:blue;
+	     --x:250px;
+	     --y:-300px;
+	"></div>
+
+	<div class="confetti"
+	     style="
+	     left:50%;
+	     top:50%;
+	     background:yellow;
+	     --x:-150px;
+	     --y:-350px;
+	"></div>
+
+	<div class="confetti"
+	     style="
+	     left:50%;
+	     top:50%;
+	     background:lime;
+	     --x:350px;
+	     --y:-200px;
+	"></div>
+
+	<div class="confetti"
+	     style="
+	     left:50%;
+	     top:50%;
+	     background:pink;
+	     --x:0px;
+	     --y:-400px;
+	"></div>
+	
 	<h2>
 		<span th:if="${team16GameForm.blackCount>team16GameForm.whiteCount}">
 			<span th:text="|🎊${team16GameForm.black}の勝利🎊|"></span>
@@ -28,18 +82,16 @@
 						
 		                <button type="submit" class="board" disabled>
 							<div th:if="${x == 1}"
-								th:class="${team16GameForm.effectBoard[i.index][j.index]==1}
-								? 'black whiteToBlack'
-								:(${team16GameForm.effectBoard[i.index][j.index]==2}
-								? 'black put'
-								: 'black')">
+								th:class="${team16GameForm.effectBoard[i.index][j.index] == 1} 
+								? 'black whiteToBlack' :
+								(${team16GameForm.effectBoard[i.index][j.index] == 2} 
+								? 'black put' : 'black')">
 							</div>
 							<div th:if="${x == 2}"
-								th:class="${team16GameForm.effectBoard[i.index][j.index]==1}
-								? 'white blackToWhite'
-								:(team16GameForm.effectBoard[i.index][j.index]==2
-								? 'white put'
-								: 'white')">
+								th:class="${team16GameForm.effectBoard[i.index][j.index] == 1} 
+								? 'white blackToWhite' :
+								(${team16GameForm.effectBoard[i.index][j.index] == 2} 
+								? 'white put' : 'white')">
 							</div>
 							<div th:if="${x == 3}" class="greyW"></div>						
 		                </button>

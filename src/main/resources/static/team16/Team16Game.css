@@ -94,7 +94,7 @@ h2{
     }
 
     60%{
-        transform: scale(1.25);
+        transform: scale(1.2);
         opacity: 1;
     }
 
@@ -147,3 +147,4 @@ h2{
         transform:rotateY(180deg);
     }
 }
+
